@@ -2,7 +2,7 @@ var express =require("express");
 var app = express();
 var request =require("request");
 
-app.set("view.engine");
+app.set("view engine", "ejs");
 
 
 app.get("/results", function(req, res){
