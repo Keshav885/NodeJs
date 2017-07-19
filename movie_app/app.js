@@ -10,8 +10,9 @@ app.get("/results", function(req, res){
     	if(!error && response.statusCode ===  200){
     		res.send(body);
     	}
+    });
 });
 
 app.listen(3000, function(req, res){
-	console.log("Server is started form post");
+	console.log("Server is started from movie app");
 });
