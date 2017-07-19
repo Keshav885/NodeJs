@@ -10,10 +10,10 @@ app.get("/", function(req, res){
 });
 
 app.get("/results", function(req, res){
-    var query = req.query.movieSearch;
-    var url = "http://www.omdbapi.com/?s=in&apikey=thewdb" + query;
-    request("url", function(error, response, body){
-    	
+    var query = req.query.search;
+    var url = "http://www.omdbapi.com/?s="+query+"&apikey=thewdb";
+    console.log(url);
+    request(url, function(error, response, body){
     	if(!error && response.statusCode ===  200){
     		var data =JSON.parse(body);
     		// res.send(results["Search"][0]["Title"]);
@@ -25,3 +25,4 @@ app.get("/results", function(req, res){
 app.listen(3000, function(req, res){
 	console.log("Server is started from movie app");
 });
+
